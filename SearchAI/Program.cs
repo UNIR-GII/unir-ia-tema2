@@ -1,4 +1,5 @@
-﻿using SearchAI.Algorithms;
+﻿using System.Diagnostics;
+using SearchAI.Algorithms;
 using SearchAI.SampleProblems;
 
 while (true)
@@ -42,6 +43,19 @@ while (true)
         Console.WriteLine("❌ No se encontró un camino.");
     }
 
+    Console.WriteLine("\n🔍 Métricas detalladas:");
+    Console.WriteLine($" - Nodos generados: {result.NodesGenerated}");
+    Console.WriteLine($" - Nodos expandidos: {result.NodesExpanded}");
+    Console.WriteLine($" - Profundidad alcanzada: {result.MaxDepth}");
+    Console.WriteLine($" - Tamaño máximo de la frontera: {result.MaxFrontierSize}");
+    Console.WriteLine($" - Longitud de la solución: {result.GetPath().Count() - 1}");
+    Console.WriteLine($" - Tiempo total de búsqueda: {result.ElapsedTime.TotalMilliseconds:F2} ms");
+    Console.WriteLine($" - Tiempo lógico de computación: {result.ComputationTime.TotalMilliseconds:F2} ms");
+    Console.WriteLine($" - Tics de reloj (CPU): {result.TotalTicks} ticks");
+    
+    var proc = Process.GetCurrentProcess();
+    Console.WriteLine($" - Tiempo de CPU real (usuario + kernel): {proc.TotalProcessorTime.TotalMilliseconds:F2} ms");
+    
     Console.WriteLine("\nPresione cualquier tecla para continuar...");
     Console.ReadKey();
 }
