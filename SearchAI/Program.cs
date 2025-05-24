@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using SearchAI.Algorithms;
+using SearchAI.Instrumentation;
 using SearchAI.SampleProblems;
 
 while (true)
@@ -13,30 +14,31 @@ while (true)
     Console.Write("Opción: ");
 
     var option = Console.ReadLine();
-    ISearchAlgorithm<string>? algorithm = option switch
-    {
-        "1" => new BreadthFirstSearch<string>(),
-        "2" => new DepthFirstSearch<string>(),
-        "0" => null,
-        _ => null
-    };
 
-    if (option == "0" || algorithm == null)
+    if (option == "0")
     {
         Console.WriteLine("👋 Saliendo del programa.");
         break;
     }
 
+    ISearchAlgorithm<string> algorithm = option switch
+    {
+        "1" => new BreadthFirstSearch<string>(),
+        "2" => new DepthFirstSearch<string>(),
+        _ => throw new InvalidOperationException("Opción no válida.")
+    };
+
+    var instrumented = new InstrumentedSearchAlgorithm<string>(algorithm);
     var problem = CityMapProblem.Create();
-    var result = algorithm.Search(problem);
+    var result = instrumented.Search(problem);
 
     Console.WriteLine();
-    if (result is not null)
+    if (result.GoalNode is not null)
     {
         Console.WriteLine("✅ Ruta encontrada:");
         foreach (var city in result.GetPath())
             Console.WriteLine($" - {city}");
-        Console.WriteLine($"Total de pasos: {result.Cost}");
+        Console.WriteLine($"Total de pasos: {result.GoalNode.Cost}");
     }
     else
     {
@@ -52,10 +54,10 @@ while (true)
     Console.WriteLine($" - Tiempo total de búsqueda: {result.ElapsedTime.TotalMilliseconds:F2} ms");
     Console.WriteLine($" - Tiempo lógico de computación: {result.ComputationTime.TotalMilliseconds:F2} ms");
     Console.WriteLine($" - Tics de reloj (CPU): {result.TotalTicks} ticks");
-    
+
     var proc = Process.GetCurrentProcess();
     Console.WriteLine($" - Tiempo de CPU real (usuario + kernel): {proc.TotalProcessorTime.TotalMilliseconds:F2} ms");
-    
+
     Console.WriteLine("\nPresione cualquier tecla para continuar...");
     Console.ReadKey();
 }

@@ -7,12 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f533c77-5328-4db2-9533-1d00463b0e91" name="Changes" comment="First commit">
+    <list default="true" id="6f533c77-5328-4db2-9533-1d00463b0e91" name="Changes" comment="Adding new metrics">
+      <change afterPath="$PROJECT_DIR$/SearchAI/Instrumentation/InstrumentedSearchAlgorithm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.unir-ia-tema2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.unir-ia-tema2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SearchAI/Algorithms/BreadthFirstSearch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SearchAI/Algorithms/BreadthFirstSearch.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SearchAI/Algorithms/DepthFirstSearch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SearchAI/Algorithms/DepthFirstSearch.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SearchAI/Algorithms/ISearchAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SearchAI/Algorithms/ISearchAlgorithm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SearchAI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SearchAI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SearchAI/SampleProblems/CityMapProblem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SearchAI/SampleProblems/CityMapProblem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +29,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e36e4d1a8f8dfb08d7e3a6041459c9791d732c01/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e36e4d1a8f8dfb08d7e3a6041459c9791d732c01/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Queue.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e36e4d1a8f8dfb08d7e3a6041459c9791d732c01/src/libraries/System.Private.CoreLib/src/System/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Repos/unir-gii/ia/tema2-busqueda/unir-ia-tema2/SearchAI/Algorithms/BreadthFirstSearch.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Repos/unir-gii/ia/tema2-busqueda/unir-ia-tema2/SearchAI/Algorithms/BreadthFirstSearch.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SearchAI/obj/Debug/net9.0/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -94,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748096995820</updated>
-      <workItem from="1748096999962" duration="5703000" />
+      <workItem from="1748096999962" duration="7370000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -104,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748102251632</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding new metrics">
+      <option name="closed" value="true" />
+      <created>1748102835142</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748102835142</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +136,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Adding new metrics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding new metrics" />
   </component>
 </project>

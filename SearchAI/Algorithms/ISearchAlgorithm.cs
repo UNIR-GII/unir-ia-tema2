@@ -4,5 +4,5 @@ namespace SearchAI.Algorithms;
 
 public interface ISearchAlgorithm<T>
 {
-    SearchResult<T>? Search(SearchProblem<T> problem);
+    Node<T>? Search(SearchProblem<T> problem);
 }

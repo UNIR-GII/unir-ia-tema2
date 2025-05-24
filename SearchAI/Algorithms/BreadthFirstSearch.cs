@@ -1,40 +1,21 @@
-﻿using System.Diagnostics;
-using SearchAI.Models;
+﻿using SearchAI.Models;
 
 namespace SearchAI.Algorithms;
 
 public class BreadthFirstSearch<T> : ISearchAlgorithm<T>
 {
-    public SearchResult<T> Search(SearchProblem<T> problem)
+    public Node<T>? Search(SearchProblem<T> problem)
     {
-        var swGlobal = Stopwatch.StartNew();
-        var result = new SearchResult<T>
-        {
-            StartTicks = Stopwatch.GetTimestamp()
-        };
-
         var frontier = new Queue<Node<T>>();
         var explored = new HashSet<T>();
-
         frontier.Enqueue(new Node<T>(problem.InitialState));
-        result.NodesGenerated++;
-        result.MaxFrontierSize = 1;
-
-        var swLogic = new Stopwatch();
-        swLogic.Start();
 
         while (frontier.Count > 0)
         {
-            result.MaxFrontierSize = Math.Max(result.MaxFrontierSize, frontier.Count);
             var node = frontier.Dequeue();
-            result.NodesExpanded++;
-            result.MaxDepth = Math.Max(result.MaxDepth, node.Cost);
 
             if (problem.IsGoal(node.State))
-            {
-                result.GoalNode = node;
-                break;
-            }
+                return node;
 
             explored.Add(node.State);
 
@@ -43,18 +24,10 @@ public class BreadthFirstSearch<T> : ISearchAlgorithm<T>
                 if (!explored.Contains(state) && !frontier.Any(n => n.State!.Equals(state)))
                 {
                     frontier.Enqueue(new Node<T>(state, node, action, node.Cost + cost));
-                    result.NodesGenerated++;
                 }
             }
         }
 
-        swLogic.Stop();
-        swGlobal.Stop();
-
-        result.EndTicks = Stopwatch.GetTimestamp();
-        result.ComputationTime = swLogic.Elapsed;
-        result.ElapsedTime = swGlobal.Elapsed;
-
-        return result;
+        return null;
     }
 }
