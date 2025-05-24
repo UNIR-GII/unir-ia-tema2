@@ -1,0 +1,79 @@
+﻿# Build results
+bin/
+obj/
+
+# Rider project files
+.idea/
+*.sln.iml
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# DotCover is a JetBrains tool for code coverage
+.idea/.dotCover
+
+# ASP.NET temporary files
+**/wwwroot/**/dist/
+**/wwwroot/**/node_modules/
+
+# Rider Caches
+.idea/.idea.*
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries
+.idea/shelf
+
+# JetBrains Rider logs and settings
+.idea/.Rider*
+
+# Rider specific to .NET
+.idea/.netcore*
+
+# Visual Studio Code
+.vscode/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs
+*.log
+*.tlog
+
+# Build artifacts
+*.dll
+*.exe
+*.app
+*.pdb
+
+# Configuration files
+appsettings.Development.json
+secrets.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# Others
+*.vs/
+_ReSharper*/
